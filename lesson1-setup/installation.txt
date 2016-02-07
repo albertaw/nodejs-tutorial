@@ -1,0 +1,30 @@
+TODO: test installation by running hello.js from the terminal
+
+Download 
+https://nodejs.org
+
+Execute javascript in node repl
+>node
+
+Launch node.js scripts
+>node filename
+
+npm - installs modules
+npm install packageName
+
+core npm modules:
+http - responsible for http server
+http.createServer() - returns a new webserver object
+http.listen() - accepts connections on the specified port
+http.serverRequest() - passes incoming requests to request handlers
+	request.method()
+	request.url()
+http.serverResonse() - automatically created by the http server and is used as an output of request handlers.
+	reponse.writeHead() - sends a response header to the request
+	response.write() - sends a response body
+	response.end() - sends and ends a response
+util
+querystring
+url
+fs
+
