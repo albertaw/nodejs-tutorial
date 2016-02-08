@@ -1,7 +1,6 @@
 TODO: 
-create a web server module 
-import the module in the main file and start the server
-*bonus-create modules based on the other patterns listed below
+Create a module, import the module in a main file and call one of its functions.
+*bonus-create modules based on all of the patterns listed below
 
 Each file is its own module.
 Each file has access to the current module definition using the module variable
