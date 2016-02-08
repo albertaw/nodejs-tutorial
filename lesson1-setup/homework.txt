@@ -1,2 +1,0 @@
-TODO: 
-test installation by running a javascript file from the terminal

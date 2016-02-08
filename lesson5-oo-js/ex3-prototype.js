@@ -1,6 +1,5 @@
-//fully exposed object, uses ‘this’ keyword to define 
-//properties inside constructor, defines methods with 
-//prototype
+//creational class, uses ‘this’ keyword to define 
+//properties inside constructor, defines methods with prototype
 
 var Book = function (isbn, title, author) {
 	//public
@@ -14,7 +13,7 @@ Book.prototype.display = function () {
             this.title + " author: " + this.author
 }
 
-/*
+/* alternative syntax
 Book.prototype = {
 	getIsbn: function () {
 		return this.isbn;

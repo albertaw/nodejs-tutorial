@@ -1,3 +1,4 @@
+//creational class for creating new objects.  Attributes are public
 var Book = function (isbn, title, author) {
 	this.isbn = isbn;
 	this.title = title;

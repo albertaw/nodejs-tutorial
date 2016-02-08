@@ -1,4 +1,4 @@
-//Structural class,good for namespacing or configuration objects
+//Structural class, good for namespacing or configuration objects
 
 var Book = {
 	isbn: "1234",

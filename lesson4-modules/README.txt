@@ -1,7 +1,13 @@
-Each file is its own module
+TODO: 
+create a web server module 
+import the module in the main file and start the server
+*bonus-create modules based on the other patterns listed below
+
+Each file is its own module.
 Each file has access to the current module definition using the module variable
 Export the current module using module.exports
-Import a module using the require function
+Import a module using the require function.   
+var module = require('./path/to/module');
 
 Different ways to create a module
 
@@ -11,9 +17,7 @@ exports.name = function (req, res) {
 }
 2. exporting an object, useful when we are creating our models in mongo db
 var publicMethod = function () {
-	return {
-		something: 123
-	}
+
 }
  module.exports = publicMethod
 

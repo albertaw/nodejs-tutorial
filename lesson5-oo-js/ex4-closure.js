@@ -1,4 +1,4 @@
-//private members through closure
+//creational class, private members through closure
 var Book = function(newIsbn, newTitle, newAuthor) { 
 
   // declaring varibales with the var keyword makes them private attributes.
@@ -15,14 +15,11 @@ var Book = function(newIsbn, newTitle, newAuthor) {
     return isbn;
   };
   this.setIsbn = function(newIsbn) {
-  // if(!checkIsbn(newIsbn)) throw new Error('Book: Invalid ISBN.');
-  isbn = newIsbn;
+    isbn = newIsbn;
   };
 
-  // Constructor code
+  //initialization code
   this.setIsbn(newIsbn);
-  this.setTitle(newTitle);
-  this.setAuthor(newAuthor);
    
 };
 

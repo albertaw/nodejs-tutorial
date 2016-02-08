@@ -1,10 +1,11 @@
-//uses facade pattern to expose api
+//creational, uses facade pattern to expose api.  
+//Very commonly used when creating apps
 var Book = function() { 
 
-  // Private static attributes.
+  // Private attributes.
    var isbn, title, author;
 
-  // Private static method.
+  // Private method.
   function checkIsbn(isbn) {
    
   }
@@ -21,7 +22,6 @@ var Book = function() {
 	   	return isbn;
 	   },
 	   setIsbn: function(newIsbn) {
-		   //if(!checkIsbn(newIsbn)) throw new Error('Book: Invalid ISBN.');
 		   isbn = newIsbn;
 	   },
 
