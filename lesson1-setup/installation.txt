@@ -1,4 +1,3 @@
-TODO: test installation by running hello.js from the terminal
 
 Download 
 https://nodejs.org

@@ -26,7 +26,3 @@ module.exports = {
 to require one file
 exports.moduleA = require(‘./moduleA);
 exports.moduleB = require(‘./moduleB);
-
-TODO
-create a web server module 
-import the module in the main file and start the server

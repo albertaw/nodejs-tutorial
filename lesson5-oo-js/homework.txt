@@ -5,3 +5,5 @@ book class.
 Export both modules to a single file
 Create a main file where you will create a bookstore and add three books to the store.
 Display the list of books to the console.
+
+*Bonus: do not hard code the book information.  Read it from a file

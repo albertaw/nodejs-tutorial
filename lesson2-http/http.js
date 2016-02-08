@@ -18,7 +18,7 @@ server.listen(3000);
 //output message to the console
 console.log('Server running on port 3000');
 
-/* 
+/* alternate syntax
 http.createServer(function(req, res) {
 	...
 }).listen(3000);
