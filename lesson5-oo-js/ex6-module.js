@@ -1,5 +1,4 @@
 //creational, uses facade pattern to expose api.  
-//Very commonly used when creating apps
 var Book = function() { 
 
   // Private attributes.

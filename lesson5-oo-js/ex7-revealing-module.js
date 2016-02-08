@@ -1,4 +1,5 @@
-//a singleton wrapped in a self executing function
+//a singleton implemented as a immediately executing function to 
+//instantiate the object
 var Book = (function() { 
 
   // Private attributes.
@@ -15,7 +16,6 @@ var Book = (function() {
 	   	return isbn;
 	   },
 	   setIsbn: function(newIsbn) {
-		   //if(!checkIsbn(newIsbn)) throw new Error('Book: Invalid ISBN.');
 		   this.isbn = newIsbn;
 	   },
 

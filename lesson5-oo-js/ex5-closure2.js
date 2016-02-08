@@ -1,5 +1,5 @@
-//Creational, a self executing function that returns the constructor.
-//keeps members private
+//Creational, immdiately executing function that instantiates the object,
+//returns the constructor.
 var Book = (function() {
 
    // Private static attributes.
