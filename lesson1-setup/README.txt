@@ -15,7 +15,7 @@ $node filename
 Node Package manager (npm) - allows you to download modules made by other developers and manage the packages in your projects
 www.npmjs.com 
 $npm install packageName
-When you download a package, it will create a folder called node_modules.  The -g flag will install the module globally
+When you download a package, it will create a folder called node_modules.  The -g flag will install the module globally.  Core modules do not need to be downloaded.
 
 core npm modules:
 http - responsible for http server
