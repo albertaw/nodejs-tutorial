@@ -17,7 +17,7 @@ var app = express();
 //CONFIGURE SETTINGS
 //==============================
 //set port variable
-app.set('port', 3000);
+app.set('port', process.env.PORT || 3000);
 
 //DEFINE MIDDLEWARE
 //==============================
