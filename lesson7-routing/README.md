@@ -1,7 +1,7 @@
 # Routing in Express
 
 ## TODO
-create a module in the routes folder and implement
+Create a module in the routes folder and implement
 the route handlers that are given in the routes in the app.js file. In app.js create an array called users containing 2
 user objects. A user will have an id, first name, last name, and email address. The response will be received as json.
 
@@ -27,35 +27,35 @@ app.get('/user/:id', function(req, res) {
 ```
 ## Express request object methods and attributes
 
-request.query - query string parameters, everything to the right of the ?
-request.params - URL parameters
-request.body - request body data, requires the body-parser module to be installed
-request.route - the current route's information such as: 
+- request.query - query string parameters, everything to the right of the ?
+- request.params - URL parameters
+- request.body - request body data, requires the body-parser module to be installed
+- request.route - the current route's information such as: 
 	-path
 	-method
 	-keys
 	-regex
 	-params
-request.cookies - cookie data, required for express sessions middleware, must install cookie-parser module
-request.signedCookies - gives cookie a private value for identification
-request.header() and request.get() - retrieves request headers by their name
+- request.cookies - cookie data, required for express sessions middleware, must install cookie-parser module
+- request.signedCookies - gives cookie a private value for identification
+- request.header() and request.get() - retrieves request headers by their name
 
 ## Express response object methods and attributes
 
-response.render(name, data, callback) - generates HTML out of templates (like jade)
-response.locals - allows you to pass data to templates
-response.set(field, value) - set headers
-response.status(status) - sends the status in the response
+- response.render(name, data, callback) - generates HTML out of templates (like jade)
+- response.locals - allows you to pass data to templates
+- response.set(field, value) - set headers
+- response.status(status) - sends the status in the response
 	-200:OK
 	-201:Created
 	-301:Moved Permanently
 	-401:Unauthorized
 	-404:Not Found
 	-500:Internal Server Error 
-response.send(data) - outputs any kind of data passed to it (string, json, array, etc)
-response.json(data) - sends json data
-response.jsonp(data) - sends json data wrapped in a javascript function call
-response.redirect(path) - redirect requests to another route
+- response.send(data) - outputs any kind of data passed to it (string, json, array, etc)
+- response.json(data) - sends json data
+- response.jsonp(data) - sends json data wrapped in a javascript function call
+- response.redirect(path) - redirect requests to another route
 
 ## curl
 
