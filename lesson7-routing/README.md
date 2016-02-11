@@ -8,11 +8,11 @@ user objects. A user will have an id, first name, last name, and email address. 
 ## Overview
 Routing is mapping requests to code to execute.  The request consists of a method, route, headers, and a body. In return the web sends back a response.  You make a get request when you enter a url into browser and you get an html page in the rsponse.  
 
-**Methods**
-- GET - retrieves a resource
-- POST - creates a resource
-- PUT - updates a resource
-- DELETE - deletes a resource
+**Methods**  
+GET - retrieves a resource  
+POST - creates a resource  
+PUT - updates a resource  
+DELETE - deletes a resource  
 
 This is the general formula for creating a route in express:
 ```js
@@ -59,8 +59,8 @@ app.get('/user/:id', function(req, res) {
 
 ## curl
 
-**Overview**
-  curl is a command line tool for querying URLs. You can use this to 
+**Overview**  
+curl is a command line tool for querying URLs. You can use this to 
 test that your URLs work correctly. 
 To make  a GET request to a URL:
 ```bash
@@ -68,23 +68,23 @@ curl http://example.com/api/users
 ```
 -X flag allows us to use HTTP request methods other than GET
 
-**sending parameters**
-  Append a query string at the end of the url begining with a ? 
+**Sending parameters**  
+Append a query string at the end of the url begining with a ? 
 and each parameter separated by a &:
 ```bash
 curl -X POST "http://example.com/api/users?fname=Alberta&lname=Williams"
 ```
 Pass data in a request body using the -d flag:
 ```bash
-curl -X POST -d "fname=Alberta&lname=Williams" http://example.com/users
+curl -X POST http://example.com/users -d "fname=Alberta&lname=Williams"
 ```
 Send json as data:
 ```bash
-curl -X POST -d "{'fname':'Alberta','lname':'Williams'}" http://example.com/users
+curl -X POST http://example.com/users -d "{'fname':'Alberta','lname':'Williams'}"
 ```
 Send a file as a request body using @filename:
 ```bash
-curl -X POST -d @users.json http://example.com/api/users
+curl -X POST http://example.com/api/users -d @users.json 
 ```
 To submit user credentials with a url use the -u flag:
 ```bash
@@ -92,5 +92,6 @@ curl -X POST -u "user1:password1" http://example.com/login
 ```
 
 ## Resources
-[curl tutorial](http://conqueringthecommandline.com/book/curl)
+[test API routes](https://www.getpostman.com/)  
+[curl tutorial](http://conqueringthecommandline.com/book/curl)  
 [pretty print json](http://benw.me/posts/colourized-pretty-printed-json-with-curl/)
