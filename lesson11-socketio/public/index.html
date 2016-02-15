@@ -1,0 +1,10 @@
+<html>
+<head>
+	<title>Socket.io example</title>
+</head>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+	var socket = io.connect();
+	//send event to server
+	socket.emit('helloEvent', 'Hello world');
+</script>

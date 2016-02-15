@@ -1,5 +1,5 @@
 //a singleton implemented as a immediately executing function to 
-//instantiate the object
+//instantiate the object.  Uses this keyword
 var Book = (function() { 
 
   // Private attributes.

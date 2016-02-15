@@ -1,4 +1,6 @@
-//creational class, private members through closure
+//creational class, private members through closure.
+//closure allows us to reference an instance of a local
+//variable in an enclosing function.
 var Book = function(newIsbn, newTitle, newAuthor) { 
 
   // declaring varibales with the var keyword makes them private attributes.
@@ -10,7 +12,7 @@ var Book = function(newIsbn, newTitle, newAuthor) {
   }
 
   // Privileged methods. Have the privilage to access private variables
-  // but can also be used by outside classes
+  // but can also be used by outside classes. A closure.
   this.getIsbn = function() {
     return isbn;
   };

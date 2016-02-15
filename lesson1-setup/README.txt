@@ -12,10 +12,14 @@ Launch a node.js script from your terminal. This is how you will start your apps
 $node filename
 *you do not have to type the extension of filename to run the script 
 
-Node Package manager (npm) - allows you to download modules made by other developers and manage the packages in your projects
-www.npmjs.com 
+Node Package manager (npm) - allows you to download modules made by other developers and manage the packages in your projects.  
+
+Your package.json file will hold the information
+about the node modules you ave installed.  To create a file type npm init from the terminal.
+
 $npm install packageName
-When you download a package, it will create a folder called node_modules.  The -g flag will install the module globally.  Core modules do not need to be downloaded.
+When you download a package, it will create a folder called node_modules.  The -g flag will install the module globally. 
+--save will save a reference to the package in your package.json file.  Core modules do not need to be downloaded.
 
 core npm modules:
 http - responsible for http server

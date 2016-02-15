@@ -1,5 +1,7 @@
 TODO:
-export your app and start your server in another file
+Create a static website and store it in a folder name public.
+Check your code into Github.
+Deploy the app to Heroku.
 
 How to organize your Express entry file:
 1. Include third party dependencies and modules

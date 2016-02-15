@@ -1,9 +1,9 @@
 # Routing in Express
 
 ## TODO
-Create a module in the routes folder and implement
-the route handlers that are given in the routes in the app.js file. In app.js create an array called users containing 2
-user objects. A user will have an id, first name, last name, and email address. Output the response as json.
+Implement the route handlers that are given in the routes in
+the app.js file. In app.js create an array called users and
+initialize with a few user objects. A user will have an id, first name, last name, and email address. Output the response as json.
 
 ## Overview
 Routing is mapping requests to code to execute.  The request consists of a method, route, headers, and a body. In return the web sends back a response.  You make a get request when you enter a url into browser and you get an html page in the rsponse.  
@@ -16,7 +16,7 @@ DELETE - deletes a resource
 
 This is the general formula for creating a route in express:
 ```js
-app.method('/url', requesteHandler)
+app.method('url', requesteHandler)
 ```
 
 To create a route that uses parameters add a colon before the parameter name in the route. In express, to extract a parameter from a url we use `request.params.parameterName` or `req.params.parameterName` depending on how you named the argument in your request handler. 
