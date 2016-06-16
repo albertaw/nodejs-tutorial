@@ -1,6 +1,39 @@
-## Angular
+## Angular and Node
+
+On the server we define our routes and in the request 
+handler we will either create, read, update or delete
+an object in our data store.  In this example, the 
+data store is an array.  Therefore, any changes made to
+the array will only exist during the session you are
+running your app. 
+
+You're data can come from a json file,
+your database, or an external api.  For angular to use 
+this data, we need to make use of their $http service. 
+To use the $http service, you will call the request method
+with the url and a callback function. POST and PUT requests
+need request data passed into them. 
+
+```js
+$scope.users = [];
+$http.get('/url')
+//success callback
+.then(function(response){
+  $scope.users = response.data;
+  //error callback
+}, function(response) {
+  console.log(response.statusText);
+});
+
+$http.post('/url', data).then(successCallback, errorCallback);
+
+$http.put('/url', data).then(successCallback, errorCallback);
+
+$http.delete('/url').then(successCallback, errorCallback);
+```
+
 Steps to making an Angular app:   
-1. Create a module and use ng-app in the view to define
+1.Create a module and use ng-app in the view to define
 the application scope.   
 ```js
 var app = angular.module("myApp", []);
@@ -10,7 +43,7 @@ in your view:
 ```html
 <html ng-app="myApp">
 ```
-2. Create a controller and use ng-controller in the 
+2.Create a controller and use ng-controller in the 
 view to define the controller scope.
 
 ```js
@@ -24,7 +57,7 @@ in your view:
 <body ng-controller="MainController">
 ```
 
-3. Add data to $scope in the controller so it can be
+3.Add data to $scope in the controller so it can be
 displayed with expressions in the view.
 ```html
 <h1>{{ title }}</h1>
