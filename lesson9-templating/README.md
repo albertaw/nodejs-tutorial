@@ -4,17 +4,24 @@ Steps to making an Angular app:
 the application scope.   
 ```js
 var app = angular.module("myApp", []);
-\\in your view file
+```
+in your view:
+
+```html
 <html ng-app="myApp">
 ```
 2. Create a controller and use ng-controller in the 
 view to define the controller scope.
+
 ```js
 app.controller('MainController', ['$scope',function($scope){
 	$scope.title = "My App";
 }]);
-\\in your view file
-<body ng-controller="mainController">
+```
+in your view:
+
+```html
+<body ng-controller="MainController">
 ```
 
 3. Add data to $scope in the controller so it can be
@@ -22,12 +29,15 @@ displayed with expressions in the view.
 ```html
 <h1>{{ title }}</h1>
 ```
-4. If the data is in an array:
+
+If the data is in an array:
+
 ```html
 <div ng-repeat="item in array">
    <div>{{ item.value }}</div>
 </div>
 ```
+
 ## Directives
 
 Allow you to make resusable HTML components
@@ -44,11 +54,14 @@ app.directive('helloWorld', function() {
 ```
 restrict specifies how the directive is used in HTML
 A is for attribute
-```
+
+```html
 <div hello-world></div>
 ```
+
 E is for element
-```
+
+```html
 <hello-world></hello-world>
 ```
 
@@ -63,6 +76,8 @@ scope - change a directive's scope to a child scope or isolated scope. Specifies
 
 lets you share code across your app. Use $http to fetch data from a server
 in js/services/service.js
+
+```js
 app.factory('service', function($http){
 	return $http.get('/path')
 	.success(function(data){
@@ -72,19 +87,25 @@ app.factory('service', function($http){
 	return err;
 	})
 })
-
+```
 in the controller:
+
+```js
 app.controller('MainController', ['$scope', 'service', function($scope, service) {
 	service.success(function(data){
     $scope.data = data;
   });
 }]);
-
+```
 in view:
-{{ data.key1 }}
 
+```html
+{{ data.key1 }}
+```
 ## Routing
 Lets you map routes to request handlers.
+
+```js
 var app = angular.module('myApp', ['ngRoute']);
 
 app.config(function($routeProvider){
@@ -101,9 +122,10 @@ app.config(function($routeProvider){
     redirectTo: '/'
   });
 });
-
-In controller inject $routeParams as a dependency
 ```
+In controller inject $routeParams as a dependency
+
+```js
 app.controller("UserController", function($scope, $routeParams, users){
   users.success(function(data){
     $scope.user = data[$routeParams.id];
@@ -111,6 +133,5 @@ app.controller("UserController", function($scope, $routeParams, users){
 })
 ```
  
-
 ## TODO 
 Implement edit functionality and create routes and views for users, user, and edit.  
