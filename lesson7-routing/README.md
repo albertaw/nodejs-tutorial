@@ -61,7 +61,7 @@ app.get('/user/:id', function(req, res) {
 
 **Overview**  
 curl is a command line tool for querying URLs. You can use this to 
-test that your URLs work correctly. 
+test that your URLs work correctly without creating a user interface in your app. 
 To make  a GET request to a URL:
 ```bash
 curl http://example.com/api/users

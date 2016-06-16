@@ -16,8 +16,8 @@ var bodyParser = require('body-parser');
 //create our app with express
 var app = express();
 var users = [
-	{id:0, fname: "jane", lname: "doe", email: "jane@example.com"},
-	{id:1, fname: "john", lname: "smith", email: "john@example.com"}
+	{id:0, fname: "Jane", lname: "Doe"},
+	{id:1, fname: "John", lname: "Doe"}
 ];
 
 //CONFIGURE SETTINGS
@@ -35,6 +35,8 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 //parse urlencoded bodies like "fname=Jane&lname="Doe"
 app.use(bodyParser.urlencoded({'extended':'true'}));
+
+
 
 //DEFINE ROUTES
 //==============================
@@ -81,18 +83,7 @@ var server = http.createServer(app);
 
 //START APP
 //==============================
-function start () {
-	server.listen(app.get('port'), function () {
-		console.log('Express server listening on port ' + app.get('port'));
-	});
-}
+server.listen(app.get('port'), function () {
+	console.log('Express server listening on port ' + app.get('port'));
+});
 
-function shutdown () {
-	server.close();
-}
-
-module.exports = {
-	app: app,
-	start: start,
-	shutdown: shutdown
-}
