@@ -108,8 +108,10 @@ E is for element
 
 ## Services
 
-lets you share code across your app. Use $http to fetch data from a server
-in js/services/service.js
+Services let you share code across your app. For example, angular has an $http service that lets you fetch data from a server. To use a service you inject the service as a dependency in your controller. If you would like to create your own service,
+you use the factory method.
+
+Create a file named js/services/service.js and include:
 
 ```js
 app.factory('service', function($http){
