@@ -184,4 +184,12 @@ be executed.
 </body>
 ```
 ## TODO 
-Implement edit functionality and create routes and views for users, user, and edit.  
+1. Clone the repo and scaffold your app with the project 
+2. Create a controller called MainController and add $scope and $http as dependencies. 
+3. Add the variable $scope.users to the controller and use the $http service to get all users.
+4. Create a view named main.html to show each users attributes. 
+Add the ng-view directive into index.html
+5. Link the ngRoute library in the head of index.html. In app.js add ngRoute as a dependency in the module. 
+6. In app.js create a route for '/' that is mapped to the
+MainController and to the template main.html. Otherwise redirect
+to '/'.

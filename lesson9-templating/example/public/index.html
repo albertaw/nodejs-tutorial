@@ -2,8 +2,11 @@
 <html ng-app="myApp">
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<!-- Include the AngularJS library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <!-- ngRoute library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
 	</head>
 	<body ng-controller="MainController">
 		<div class="container">
@@ -20,13 +23,10 @@
 					<button class="btn btn-default" ng-click="addUser()">Add user</button>
 				</div>
 			</form>
-			<div ng-repeat="user in users">
-				<h3>{{ user.fname + " " + user.lname}}</h3>
-				<button class="btn btn-default">edit</button>
-				<button class="btn btn-default" ng-click="deleteUser($index)">delete</button>
-			</div>
+			<!-- VIEW INJECTION -->
+			<ng-view></ng-view>
 		</div>
-		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		 
 		<script type="text/javascript" src="js/app.js"></script>
 		<script type="text/javascript" src="js/controllers/MainController.js"></script>
 	</body>

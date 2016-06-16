@@ -1,0 +1,5 @@
+<div ng-repeat="user in users">
+	<h3>{{ user.fname + " " + user.lname}}</h3>
+	<button class="btn btn-default">edit</button>
+	<button class="btn btn-default" ng-click="deleteUser($index)">delete</button>
+</div>

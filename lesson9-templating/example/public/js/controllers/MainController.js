@@ -7,7 +7,7 @@ app.controller('MainController', function($scope, $http){
 		}, function(response){
 			console.error('Error: ' + response.statusText);
 	});
-
+/*
 	$scope.addUser = function() {
 		$http.post('/api/users', $scope.user)
 			.then(function(response){
@@ -27,5 +27,5 @@ app.controller('MainController', function($scope, $http){
 			console.log('Error: ' + response.data);
 		});
 	};
-
+*/
 });
