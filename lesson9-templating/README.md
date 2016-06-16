@@ -15,7 +15,7 @@ with the url and a callback function. POST and PUT requests
 need request data passed into them. 
 
 ```js
-$scope.users = [];
+//retrieve an object
 $http.get('/url')
 //success callback
 .then(function(response){
@@ -25,15 +25,18 @@ $http.get('/url')
   console.log(response.statusText);
 });
 
+//create an object with the supplied data
 $http.post('/url', data).then(successCallback, errorCallback);
 
+//update an object with the supplied data
 $http.put('/url', data).then(successCallback, errorCallback);
 
+//delete an object
 $http.delete('/url').then(successCallback, errorCallback);
 ```
 
 Steps to making an Angular app:   
-1.Create a module and use ng-app in the view to define
+I. Create a module and use ng-app in the view to define
 the application scope.   
 ```js
 var app = angular.module("myApp", []);
@@ -43,7 +46,7 @@ in your view:
 ```html
 <html ng-app="myApp">
 ```
-2.Create a controller and use ng-controller in the 
+II. Create a controller and use ng-controller in the 
 view to define the controller scope.
 
 ```js
@@ -57,7 +60,7 @@ in your view:
 <body ng-controller="MainController">
 ```
 
-3.Add data to $scope in the controller so it can be
+III. Add data to $scope in the controller so it can be
 displayed with expressions in the view.
 ```html
 <h1>{{ title }}</h1>
@@ -98,12 +101,12 @@ E is for element
 <hello-world></hello-world>
 ```
 
-template specifies the HTML markup
-templateUrl - the file path to the template code
-replace - if the generated template will replace the HTML element that the directive is attached to.
-link - a function that uses the parent scope to attach behavior to the DOM. Takes 3 arguments: scope, elem, attrs.  Common uses are attaching event listeners, watching model properties for changes, and updating the DOM.
-compile - a function that performs DOM transformations before the link function.
-scope - change a directive's scope to a child scope or isolated scope. Specifies the attributes we will pass through the directive and how it will be passed
+template - specifies the HTML markup  
+templateUrl - the file path to the template code  
+replace - if the generated template will replace the HTML element that the directive is attached to.  
+link - a function that uses the parent scope to attach behavior to the DOM. Takes 3 arguments: scope, elem, attrs. Common uses are attaching event listeners, watching model properties for changes, and updating the DOM.  
+compile - a function that performs DOM transformations before the link function.  
+scope - change a directive's scope to a child scope or isolated scope. Specifies the attributes we will pass through the directive and how it will be passed  
 
 ## Services
 
