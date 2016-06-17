@@ -6,6 +6,14 @@ app.config(function($routeProvider){
 		controller: 'MainController',
 		templateUrl: 'views/main.html'
 	})
+	.when('/add', {
+		controller: 'UserController',
+		templateUrl: 'views/addUser.html'
+	})
+	.when('/:userId', {
+		controller: 'UserController',
+		templateUrl: 'views/editUser.html'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});

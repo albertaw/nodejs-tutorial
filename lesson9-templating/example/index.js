@@ -15,10 +15,10 @@ var bodyParser = require('body-parser');
 //==============================
 //create our app with express
 var app = express();
-var users = [
-	{id:0, fname: "Jane", lname: "Doe"},
-	{id:1, fname: "John", lname: "Doe"}
-];
+var users = {
+	jane: {username: "jane", fname: "Jane", lname: "Doe"},
+	john: {username: "john", fname: "John", lname: "Doe"}
+};
 
 //CONFIGURE SETTINGS
 //==============================
@@ -63,14 +63,14 @@ app.put('/api/users/:id', function (req, res){
 //CREATE a user
 //curl -X POST http://localhost:3000/api/users -d "id=2&fname=Alberta&lname=Williams&email=alberta@example.com"
 app.post('/api/users', function (req, res){
-	users.push(req.body);
+	users[req.body.username] = req.body;
 	res.json(users);
 });
 
 //DELETE user by id
 //curl -X DELETE http://localhost:3000/api/users/1
 app.delete('/api/users/:id', function (req, res){
-	users.splice(req.params.id, 1);
+	delete users[req.params.id];
 	res.json(users);
 });
 

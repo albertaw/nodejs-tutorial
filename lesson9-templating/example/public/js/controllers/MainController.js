@@ -1,31 +1,13 @@
-app.controller('MainController', function($scope, $http){
+app.controller('MainController', function($scope, $http, users){
+	
 	$scope.users;
 	
-	$http.get('/api/users')
-		.then(function(response){
-			$scope.users = response.data;
-		}, function(response){
-			console.error('Error: ' + response.statusText);
+	users.success(function(data){
+		$scope.users = data;
+	})
+	.error(function(error){
+		console.log(error);
 	});
-/*
-	$scope.addUser = function() {
-		$http.post('/api/users', $scope.user)
-			.then(function(response){
-			console.log($scope.user);
-			$scope.users = response.data;
-		}, function(response) {
-			console.error('Error: ' + response.statusText);
-		});
-	};
-	
-	$scope.deleteUser = function(id) {
-		$http.delete('/api/users/' + id)
-			.then(function(response){
-			$scope.users = response.data;
-			console.log(response.data);
-		}, function(data) {
-			console.log('Error: ' + response.data);
-		});
-	};
-*/
+
+
 });
