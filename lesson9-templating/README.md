@@ -101,9 +101,7 @@ E is for element
 
 **template** - specifies the HTML markup  
 **templateUrl** - the file path to the template code  
-**replace** - if the generated template will replace the HTML element that the directive is attached to.  
 **link** - a function that uses the parent scope to attach behavior to the DOM. Takes 3 arguments: scope, elem, attrs. Common uses are attaching event listeners, watching model properties for changes, and updating the DOM.  
-**compile** - a function that performs DOM transformations before the link function.  
 **scope** - change a directive's scope to a child scope or isolated scope. Specifies the attributes we will pass through the directive and how it will be passed  
 
 ## Services
@@ -184,12 +182,19 @@ be executed.
 </body>
 ```
 ## TODO 
-1. Clone the repo and scaffold your app with the project 
-2. Create a controller called MainController and add $scope and $http as dependencies. 
-3. Add the variable $scope.users to the controller and use the $http service to get all users.
-4. Create a view named main.html to show each users attributes. 
-Add the ng-view directive into index.html
-5. Link the ngRoute library in the head of index.html. In app.js add ngRoute as a dependency in the module. 
-6. In app.js create a route for '/' that is mapped to the
-MainController and to the template main.html. Otherwise redirect
-to '/'.
+1. Clone the repo and scaffold your app with the project folder.
+2. Create a service named users that uses the $http service 
+to get all users.
+3. Create a controller called MainController and add $scope, $http, and users as dependencies. 
+4. Create a variable $scope.users in the controller and use the
+users service to initialize it.
+5. Link the [ngRoute](https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js) library in the head of index.html. In app.js add ngRoute as a dependency in the module. 
+6. In app.js configure a route for '/' and set the controller to
+MainController and the templateUrl to views/main.html. Redirect all other routes to '/'.
+7. Start your server and confirm you see the users displayed on the web page.
+8. Create a file named js/controllers/UserController.js and add $http, $scope, $routeParams, and users as dependencies. Add the route for adding a user. (explain)
+9. Create a view for adding a user in views/addUser.html (explain)
+10. In app.js add a route for '/add' with the controller as UserController and the tempplateUrl as 'views/addUser.html'.
+11. Create a view for the user page in views/editUser.html.  It should have a form with save and delete buttons.  
+12. In the UserController add routes for updating a user and deleting a user. 
+13. In app.js add a route for '/:userId' with the controller as UserController and the templateUrl as editUser.html.
