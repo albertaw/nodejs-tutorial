@@ -3,18 +3,18 @@
 		<form>
 			<div class="form-group">
 				<label>First name</label>
-	    	<input type="text" class="form-control" placeholder="First name" ng-model="user.fname" value="{{user.fname}}">
+	    	<input type="text" class="form-control" placeholder="First name" ng-model="user.firstname" value="{{user.firstname}}">
 	    </div>
 	    <div class="form-group">
 	    	<label>Last name</label>
-	    	<input type="text" class="form-control" placeholder="Last name" ng-model="user.lname" value="{{user.lname}}">
+	    	<input type="text" class="form-control" placeholder="Last name" ng-model="user.lastname" value="{{user.lastname}}">
 	    </div>
 	    <div class="form-group">
 	    	<label>Username</label>
 	    	<input type="text" class="form-control" placeholder="Username" ng-model="user.username" value="{{user.username}}">
 	    </div>
-			<button class="btn btn-default" ng-click="editUser(user.username)">Save</button>
-			<button class="btn btn-danger" ng-click="deleteUser(user.username)">delete</button>
+			<button class="btn btn-default" ng-click="update(user)">Save</button>
+			<button class="btn btn-danger" ng-click="del(user)">delete</button>
 		</form>
 	</div>
 </div>

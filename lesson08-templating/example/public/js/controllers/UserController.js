@@ -1,42 +1,46 @@
-app.controller('UserController', function($scope, $http, $routeParams, users){
-	
+app.controller('UserController', function($scope, $routeParams, Users){
+	$scope.users;
 	$scope.user;
+	$scope.form = {};
 
-	users.success(function(data){
-		$scope.user = data[$routeParams.userId];
+	//get user by id
+	Users.get().then(function(response){
+		$scope.users = response.data;
+		$scope.user = $scope.users[$routeParams.userId];
+		console.log($scope.user);
   });
 
-	$scope.addUser = function() {
-		$http.post('/api/users', $scope.user)
-			.then(function(response){
-				
-				$scope.users = response.data;
-				console.log($scope.user);
-				//clear the form data so that it does not get resubmitted
-				$scope.user = {};
-				//clear the form
-				$('.form-control').val("");
+	$scope.create = function() {
+		if (!jQuery.isEmptyObject($scope.form)) {
+			//create an id, needs to be something better
+			//$scope.form.id = $scope.users.length;
+			//console.log($scope.form);
+			//add new user
+			Users.create($scope.form);
+			console.log($scope.users);
+			//update this list of users
+			//$scope.users = response.data;
+			//clear the form
+			$scope.form = {};
+			$('.form-control').val(null);	
+		
 			
-			}, function(response) {
-			console.error('Error: ' + response.statusText);
-		});
+		} else {
+			console.error("No user information given.");
+		}
 	};
 		
-	$scope.editUser = function(id) {
-		$http.put('/api/users/' + id, $scope.user)
-		.then(function(response){
-			$scope.users = response.data;
-			console.log($scope.users);
-		})
+	$scope.update = function(user) {
+		Users.update(user);
+		console.log(user);
 	};
 
-	$scope.deleteUser = function(id) {
-		$http.delete('/api/users/' + id)
-			.then(function(response){
+	$scope.del = function(user) {
+		Users.del(user).then(function(response){
 			$scope.users = response.data;
-			console.log(response.data);
-		}, function(data) {
-			console.log('Error: ' + response.data);
+			console.log($scope.users);
+		}, function(response) {
+			console.log('Error: ' + response.statusText);
 		});
 	};
 

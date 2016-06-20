@@ -10,16 +10,17 @@ var path = require('path');
 var morgan = require('morgan'); 
 //get parameters from request body
 var bodyParser = require('body-parser');	
+//list of users
+var usersArray = require('./users.json');
 
 //INSTANTIATE OBJECTS
 //==============================
 //create our app with express
 var app = express();
-var users = {
-	jane: {username: "jane", fname: "Jane", lname: "Doe"},
-	john: {username: "john", fname: "John", lname: "Doe"}
-};
-
+var users = usersArray.reduce(function(total, current, index){
+	total[current.username] = current
+	return total;
+}, {});
 //CONFIGURE SETTINGS
 //==============================
 //set port variable
@@ -71,6 +72,7 @@ app.post('/api/users', function (req, res){
 //curl -X DELETE http://localhost:3000/api/users/1
 app.delete('/api/users/:id', function (req, res){
 	delete users[req.params.id];
+	//users.splice(users.indexOf(users[req.params.id]), 1);
 	res.json(users);
 });
 
@@ -85,5 +87,6 @@ var server = http.createServer(app);
 //==============================
 server.listen(app.get('port'), function () {
 	console.log('Express server listening on port ' + app.get('port'));
+	console.log(users);
 });
 

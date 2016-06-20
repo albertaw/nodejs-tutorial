@@ -1,13 +1,13 @@
-app.controller('MainController', function($scope, $http, users){
+app.controller('MainController', function($scope, Users){
 	
 	$scope.users;
 	
-	users.success(function(data){
-		$scope.users = data;
-	})
-	.error(function(error){
-		console.log(error);
+	Users.get().then(function(response){
+		$scope.users = response.data;
+	}, function(response){
+		console.log(response.statusText);
 	});
+
 
 
 });
