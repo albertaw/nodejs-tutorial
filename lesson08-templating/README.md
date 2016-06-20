@@ -1,39 +1,6 @@
 ## Angular
 
-On the server we define our routes and in the request 
-handler we will either create, read, update or delete
-an object in our data store.  In this example, the 
-data store is an array.  Therefore, any changes made to
-the array will only exist during the session you are
-running your app. You're data can come from a json file,
-your database, or an external api.  For angular to use 
-this data, we need to make use of their $http service. 
-To use the $http service, you will call the request method
-with the url and a callback function. POST and PUT requests
-need request data passed into them. 
-
-```js
-//retrieve an object
-$http.get('/url')
-//success callback
-.then(function(response){
-  $scope.users = response.data;
-  //error callback
-}, function(response) {
-  console.log(response.statusText);
-});
-
-//create an object with the supplied data
-$http.post('/url', data).then(successCallback, errorCallback);
-
-//update an object with the supplied data
-$http.put('/url', data).then(successCallback, errorCallback);
-
-//delete an object
-$http.delete('/url').then(successCallback, errorCallback);
-```
-
-### Steps to making an Angular app:   
+## Steps to making an Angular app:   
 I. Create a module and use ng-app in the view to define
 the application scope.  
 ```js
@@ -49,7 +16,7 @@ view to define the controller scope.
 
 ```js
 app.controller('MainController', ['$scope',function($scope){
-	$scope.title = "My App";
+  $scope.title = "My App";
 }]);
 ```
 in your view:
@@ -113,20 +80,20 @@ Create a file named js/services/service.js and include:
 
 ```js
 app.factory('service', function($http){
-	return $http.get('/path')
-	.success(function(data){
-		return data;
-	})
-	.error(function(err){
-	return err;
-	})
+  return $http.get('/path')
+  .success(function(data){
+    return data;
+  })
+  .error(function(err){
+  return err;
+  })
 })
 ```
 in the controller:
 
 ```js
 app.controller('MainController', ['$scope', 'service', function($scope, service) {
-	service.success(function(data){
+  service.success(function(data){
     $scope.data = data;
   });
 }]);
@@ -136,6 +103,42 @@ in view:
 ```html
 {{ data.key1 }}
 ```
+
+## $http Service
+On the server we define our routes and in the request 
+handler we will either create, read, update or delete
+an object in our data store.  In this example, the 
+data store is an array.  Therefore, any changes made to
+the array will only exist during the session you are
+running your app. You're data can come from a json file,
+your database, or an external api.  For angular to use 
+this data, we need to make use of their $http service. 
+To use the $http service, you will call the request method
+with the url and a callback function. POST and PUT requests
+need request data passed into them. 
+
+```js
+//retrieve an object
+$http.get('/url')
+//success callback
+.then(function(response){
+  $scope.users = response.data;
+  //error callback
+}, function(response) {
+  console.log(response.statusText);
+});
+
+//create an object with the supplied data
+$http.post('/url', data).then(successCallback, errorCallback);
+
+//update an object with the supplied data
+$http.put('/url', data).then(successCallback, errorCallback);
+
+//delete an object
+$http.delete('/url').then(successCallback, errorCallback);
+```
+
+
 ## Routing
 Lets you map routes to request handlers.
 
