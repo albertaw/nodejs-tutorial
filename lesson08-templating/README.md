@@ -24,7 +24,7 @@ In our client side code, we write the code to make this GET request. In js/servi
 ```javascript
 get: function () {
 			return $http.get('/api/users');
-		}
+	}
 ```
 
 This method returns the data for users that the server sent.  Then in js/controllers/MainController.js we call this get function
