@@ -84,7 +84,7 @@ module.exports = mongoose.model('User', userSchema);
 ```
 ## CRUD
 
-creates a new document 
+### Create a document 
 ```javascript
 var model = new Model(document)
 model.save(function(err, model){
@@ -97,7 +97,15 @@ Model.create(document, function(err, model){
   ...
 });
 ```
-Example: create a 
+Example: create a new document from our User model and give it
+a firstname and lastname.
+```javascript
+var user = new User({firstname: "Alberta", {lastname: "Williams"}});
+user.save(function(err, user){
+	res.json(user);
+});
+```
+
 Get a document
 Model.find(query, projection, options, callback)
 ```javascript
@@ -117,6 +125,14 @@ Model.findOne(query, function(err, model){
 	...
 });
 ```
+Example: find a user from our user collection that has an
+_id id.  
+```javascript
+User.findById(id, function(err, user){
+	res.json(user);
+});
+```
+
 ### update a document 
 Model.update(query, update, options, callback)
 Will update a document without returning it. Good if you
@@ -149,8 +165,17 @@ Model.findById(id, function(err, model){
 ```
 
 ### Delete a document
+
 Model.remove(query, callback);
 Model.findByIdAndRemove(id, options, callback)
 Model.findOneAndRemove(query, options, callback)
 
-## Writing tests
+Example: delete the user from the User collection with the 
+_id id.
+```javascript
+User.findByIdAndRemove(id, function(err, user){
+	//errorhandler
+	res.json(user);
+});
+```
+## Resources
