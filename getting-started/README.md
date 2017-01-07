@@ -9,14 +9,14 @@ code from within your terminal.  To do this type the `node` command
 in your temrinal to start a node repl. To exit the repl press ctr + c 
 twice.  
 
-#### TASK: Print 'hello world' from within the node repl  
+_TASK: Print 'hello world' from within the node repl_  
 
 To run code you have stored in a file from your terminal type the
 command `node filename`. Where _filename_ is replaced with the name of your JavaScript file. You do not have to type the `js` extension of filename to run the script. And you must be in the root directory where
-the file lives.
+the file lives.  
 
-#### TASK: Create a new file and put a print statement inside of it.
-Then run the code from the terminal
+_TASK: Create a new file and put a print statement inside of it.
+Then run the code from the terminal_
 
 
 ### Create a webserver
@@ -88,7 +88,9 @@ online.  Next we will go more in depth with how web severs
 work.
 
 
-#### TASK: Modify your app to send an html document. 
+### Exercise
+
+Modify your app to send an html document. 
 You will need to change the content type and the value
 passed to `response.write`. Commit your changes to github
 and deploy to Heroku.
