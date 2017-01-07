@@ -1,5 +1,7 @@
 # Node.js Tutorial
 
+## Introduction
+
 What is Node.js? Node.js (node) is a tool that lets you run JavaScript outside of a browser. It is also a library which allows you to download code made by other developers and manage the code in your projects. These packaged units of code are referred to as modules.  Node comes with it's own core modules, but to extend its functionality you will use module contributed by the community via the node package
 manager (also known as npm). 
 
@@ -25,5 +27,10 @@ functions, callbacks), git, and using a terminal.
 - [Part nine: Deployment](https://github.com/albertaw/Nodejs-tutorial/tree/master/deployment) - Build tools, continuous integration, and hosting
 - [Part ten: Putting it all together](https://github.com/albertaw/Nodejs-tutorial/tree/master/capstone) - Development workflow, software development life cycle
 
+## Contributing
 
+If you see areas where the lessons are unclear or can be
+improved, or if you catch any spelling or grammatical errors,
+submit a pull request with the proposed changes. You may also 
+add comments where you want to communicate a change. 
 
