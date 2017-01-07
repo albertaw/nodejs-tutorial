@@ -19,7 +19,7 @@ the file lives.
 Then run the code from the terminal
 
 
-## Create a webserver
+### Create a webserver
 
 ```js
 //load the http module
@@ -48,7 +48,7 @@ info about your request by typing the following command:
 $ curl -i http://localhost:3000
 ```
 
-## Deploy to Heroku
+### Deploy to Heroku
 
 https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
 

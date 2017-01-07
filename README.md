@@ -14,25 +14,16 @@ functions, callbacks), git, and using a terminal.
 
 ## Contents
 
-- Part one: Getting Started - Deploy a hellow world app to heroku
-
-- Part two: Web Servers - How the internet works
-
-- Part three: Modules - Patterns and object oriented design
-
-- Part four: Routing - Express and MVC software architecture
-
-- Part five: Testing - Mocha, SuperAgent, and Postman
-
-- Part six: Databases - MongoDB, Mongo, MongoLab, Postgres, SQL
-
-- Part seven: Auth - Authentication and authorization
-
-- Part eight: Templating - View engines and front end frameworks
-
-- Part nine: Deployment - Build tools, continuous integration, and hosting
-
-- Part ten: Putting it all together - Development workflow, software development life cycle
+- [Part one: Getting Started](https://github.com/albertaw/Nodejs-tutorial/tree/master/getting-started) - Deploy a hellow world app to heroku
+- [Part two: Web Servers](https://github.com/albertaw/Nodejs-tutorial/tree/master/web-servers) - How the internet works
+- [Part three: Modules](https://github.com/albertaw/Nodejs-tutorial/tree/master/modules) - Patterns and object oriented design
+- [Part four: Routing](https://github.com/albertaw/Nodejs-tutorial/tree/master/routing) - Express and MVC software architecture
+- [Part five: Testing](https://github.com/albertaw/Nodejs-tutorial/tree/master/testing) - Mocha, SuperAgent, and Postman
+- [Part six: Databases](https://github.com/albertaw/Nodejs-tutorial/tree/master/databases) - MongoDB and PostgreSQL
+- [Part seven: Auth](https://github.com/albertaw/Nodejs-tutorial/tree/master/auth) - Authentication and authorization
+- [Part eight: Templating](https://github.com/albertaw/Nodejs-tutorial/tree/master/templating) - View engines and front end frameworks
+- [Part nine: Deployment](https://github.com/albertaw/Nodejs-tutorial/tree/master/deployment) - Build tools, continuous integration, and hosting
+- [Part ten: Putting it all together](https://github.com/albertaw/Nodejs-tutorial/tree/master/capstone) - Development workflow, software development life cycle
 
 
 
