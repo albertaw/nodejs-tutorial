@@ -13,7 +13,7 @@ functions, callbacks), git, and using a terminal.
 
 - [Part one: Getting Started](https://github.com/albertaw/Nodejs-tutorial/tree/master/getting-started) - Deploy a hellow world app to heroku
 - [Part two: Web Servers](https://github.com/albertaw/Nodejs-tutorial/tree/master/web-servers) - How the internet works
-- [Part three: Modules](https://github.com/albertaw/Nodejs-tutorial/tree/master/modules) - Patterns and object oriented design
+- [Part three: Modules](https://github.com/albertaw/Nodejs-tutorial/tree/master/modules) - Patterns and object oriented design, unit testing
 - [Part four: Routing](https://github.com/albertaw/Nodejs-tutorial/tree/master/routing) - Express and MVC software architecture
 - [Part five: Testing](https://github.com/albertaw/Nodejs-tutorial/tree/master/testing) - Mocha, SuperAgent, and Postman
 - [Part six: Databases](https://github.com/albertaw/Nodejs-tutorial/tree/master/databases) - MongoDB and PostgreSQL
