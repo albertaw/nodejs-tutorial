@@ -37,12 +37,12 @@ When Alice asks Bob to give her the /home page she was sending a request to Bob.
  
 This interaction brings us to #2 routing requests.  Alice is limited in the kinds of requests she can make.  She can make a GET request, a POST request, a PUT request, or a DELETE request to name a few.  
  
-GET – Retrieves data
-POST – Sends data
-PUT – Sends data (to update information)
-DELETE – remove data  
+GET – Retrieves data  
+POST – Sends data  
+PUT – Sends data (to update information)  
+DELETE – remove data   
  
-Then Alice has to specify where her request is being sent.  /home, /posts/123, and /login are the destination for her request to take. This take the form of a URL.
+Then Alice has to specify where her request is being sent.  /home, /posts/123, and /login are the destination for her request to take. This takes the form of a URL.
  
  Bob’s job is to take this information and route it to the code in your app that is responsible for handling this request.  We will call that code the request handler. The request handler will execute some commands then will tell Bob what to give Alice.  Bob then responds to Alice with the data.  The gist of routing is mapping requests to request handlers.
  
@@ -68,14 +68,14 @@ As you can see in our request handler, we are doing more than just sending the t
 
 This is a summary of some of the node properties and methods you can use on the request and response object:
  
-request.headers – object containing header names and values
-request.method – the request method as a string (ex. ‘GET’)
-request.statusCode – the HTTP response code (ex. 200)
-request.statusMessage – the HTTP response status message (ex. ‘OK’)
-request.url – the URL string (ex. ‘/home’)
-response.writeHead() - sends a response header to the request
-response.write() - sends a response body
-response.end() - sends and ends a response
+request.headers – object containing header names and values  
+request.method – the request method as a string (ex. ‘GET’)  
+request.statusCode – the HTTP response code (ex. 200)  
+request.statusMessage – the HTTP response status message (ex. ‘OK’)  
+request.url – the URL string (ex. ‘/home’)  
+response.writeHead() - sends a response header to the request  
+response.write() - sends a response body  
+response.end() - sends and ends a response  
  
 ### Displaying content
  
