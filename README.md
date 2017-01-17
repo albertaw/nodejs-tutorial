@@ -11,7 +11,7 @@ functions, callbacks), git, and using a terminal.
 
 ## Contents
 
-- [Part one: Getting Started](https://github.com/albertaw/Nodejs-tutorial/tree/master/getting-started) - Deploy a hellow world app to heroku
+- [Part one: Getting Started](https://github.com/albertaw/Nodejs-tutorial/tree/master/getting-started) - Deploy a hello world app to heroku
 - [Part two: Web Servers](https://github.com/albertaw/Nodejs-tutorial/tree/master/web-servers) - How the internet works
 - [Part three: Modules](https://github.com/albertaw/Nodejs-tutorial/tree/master/modules) - Patterns and object oriented design, unit testing
 - [Part four: Routing](https://github.com/albertaw/Nodejs-tutorial/tree/master/routing) - Express and MVC software architecture
