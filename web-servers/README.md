@@ -141,7 +141,7 @@ http.createServer(onRequest).listen(3000);
  
 ### Task
  
-Create a web server that routes requests to a home page, about page, and a contact page.  If any other page is requested, the server should return an error page.
+Create a web server that routes requests to a home page, login page, and a signup page.  If any other page is requested, the server should return an error page.
  
  
 ### Resources
