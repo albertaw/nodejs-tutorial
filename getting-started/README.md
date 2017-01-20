@@ -6,7 +6,7 @@ https://nodejs.org
 Confirm the installation worked by typing the command `node -v`. 
 If everything is fine, you will get see the version number for your node installation.  One of the things you can do with node is run JavaScript
 code from within your terminal.  To do this type the `node` command
-in your temrinal to start a node repl. To exit the repl press ctr + c 
+in your terminal to start a node repl. To exit the repl press ctrl + c 
 twice.  
 
 _TASK: Print 'hello world' from within the node repl_  
@@ -19,13 +19,13 @@ _TASK: Create a new file and put a print statement inside of it.
 Then run the code from the terminal_
 
 
-### Create a webserver
+### Create a web server
 
 ```js
 //load the http module
 var http = require('http');
 
-//create a new webserver object and pass it a request listener
+//create a new web server object and pass it a request listener
 http.createServer(function (request, response) {
 	//set the header and status code
 	response.writeHead(200, {'Content-Type': 'text/plain'});
@@ -84,7 +84,7 @@ Deploy the code to Heroku:
 $ git push heroku master
 ```
 You have seen how to create a simple node app and put it
-online.  Next we will go more in depth with how web severs
+online.  Next we will go more in depth with how web servers
 work.
 
 
