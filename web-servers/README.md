@@ -57,40 +57,42 @@ In general a message will have the following format:
 ```
 
 #### 1. Start line: <request method> <path> <HTTP version number>
+
 For a request message the start line will be the request.  The request method tells Bob how to act on the request.  Here is the kinds of requests Alice can make to Bob:  
  
-GET – retrieve data  
-POST – send data  
-PUT – update data
-DELETE – remove data  
-HEAD - get the status line and headers
-CONNECT - establish a network connection
-OPTIONS - get the http methods supported by the web server
-TRACE - get the contents of the request message
+- GET – retrieve data  
+- POST – send data  
+- PUT – update data
+- DELETE – remove data  
+- HEAD - get the status line and headers  
+- CONNECT - establish a network connection  
+- OPTIONS - get the http methods supported by the web server  
+- TRACE - get the contents of the request message  
  
 Then Alice has to specify what her request is for, the path.  Last, the HTTP version is given to specify the rules for Alice and Bob to communicate with each other.   
 
-#### 2. Headers: <fieldname> : <value>  
+#### 2. Headers: <fieldname>: <value>  
 The headers are used to send instructions with the request.  For example, when Alice asks Bob for a web page, she puts a note in the headers that she wants to accept text/html.  This is the list of headers she can use:
 
-Accept-Charset
-Accept-Encoding
-Accept-Language
-Authorization
-Expect
-From
-Host
-If-Match
-If-Modified-Since
-If-None-Match
-If-Range
-If-Unmodified-Since
-Max-Forwards
-Proxy-Authorization
-Range
-Referer
-TE
-User-Agent
+- Accept-Charset
+- Accept-Encoding
+- Accept-Language
+- Authorization
+- Expect
+- From
+- Host
+- If-Match
+- If-Modified-Since
+- If-None-Match
+- If-Range
+- If-Unmodified-Since
+- Max-Forwards
+- Proxy-Authorization
+- Range
+- Referer
+- TE
+- User-Agent
+
 #### 3 Empty line
 This indicates the end of the headers.
 
@@ -138,24 +140,24 @@ When Bob receives the request, he looks for the request handling code to see how
 #### 1. Status line <http version> <status code> <status message>
 Status codes will be a three digit number with the following format:
 
-1xx: Informational
-2xx: Success
-3xx: Redirection
-4xx: Client Error
-5xx: Server Error
+- 1xx: Informational
+- 2xx: Success
+- 3xx: Redirection
+- 4xx: Client Error
+- 5xx: Server Error
 
 #### 2. Response headers <field name>: <field value>
 The headers provide additional information about the response. These are a list of field names:
 
-Accept-Ranges
-Age
-ETag
-Location
-Proxy-Authenticate
-Retry-After
-Server
-Vary
-WWW-Authenticate
+- Accept-Ranges
+- Age
+- ETag
+- Location
+- Proxy-Authenticate
+- Retry-After
+- Server
+- Vary
+- WWW-Authenticate
 
 
 #### 4. Response body
@@ -163,14 +165,14 @@ This can be text, html or another content type.
 
 In node, your request handlers will have a request and response object passed to it: `function(request, response)`. This is a summary of some of the properties and methods you can use on the request and response object:
  
-request.headers – object containing header names and values
-request.method – the request method as a string (ex. ‘GET’)
-request.statusCode – the HTTP response code (ex. 200)
-request.statusMessage – the HTTP response status message (ex. ‘OK’)
-request.url – the URL string (ex. ‘/home’)
-response.writeHead() - sends a response header to the request
-response.write() - sends a response body
-response.end() - sends and ends a response
+- request.headers – object containing header names and values
+- request.method – the request method as a string (ex. ‘GET’)
+- request.statusCode – the HTTP response code (ex. 200)
+- request.statusMessage – the HTTP response status message (ex. ‘OK’)
+- request.url – the URL string (ex. ‘/home’)
+- response.writeHead() - sends a response header to the request
+- response.write() - sends a response body
+- response.end() - sends and ends a response
  
 
 ### Displaying content
