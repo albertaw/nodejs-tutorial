@@ -23,7 +23,7 @@ In order for the client to send requests to the server it must first connect to 
 
 In order for the client to establish a connection with the server, the server must listen for and accept the connections. In the hello world web server from the Getting Started section we did this with the following code:
  
-```js
+```javascript
 http.createServer(…).listen(3000);
 ```
  
@@ -114,7 +114,7 @@ email=alice@example.com&password=s4389ohwegh#iklag!
  
 In our hello world web server example from the Getting Started section, our request handler is designed to write “hello world” to the screen for any request.  Our request handler is the callback function passed into `createServer()`. We could have rewritten our code to look like this:
  
-```js
+```javascript
 var http = require('http');
 var port = process.env.PORT || 3000;
 
@@ -182,7 +182,7 @@ In node, your request handlers will have a request and response object passed to
  
 One of the requests Bob needed to fulfill was sending an HTML page to Alice.  In Getting Started, I left you with an exercise to send HTML to the client instead of text. Your code may have looked something like this:
  
-```js
+```javascript
 //set the header and status code
 response.writeHead(200, {'Content-Type': 'text/html'});
 //html to send to response body
@@ -191,7 +191,7 @@ response.write('<h1>hello</h1>');
  
 But what if you had hundreds of lines of HTML you needed to send back to the client?  It would not be convenient to put it all inside of the `write` function.  It’s better if we keep our HTML in its own file then serve the contents of the file to the client. Node gives us a mechanism to do this with the `fs` (file system) module.  The `fs` module gives us a means to deal with files as if they were streams of data. If we wanted to refactor our code we could move the HTML to a file named index.html.  Then modify our node app like this:
  
-```js
+```javascript
 //core module for web server
 var http = require('http');
 //core module for file system
@@ -222,7 +222,7 @@ http.createServer(onRequest).listen(port);
  
 Alternatively you could achieve the same thing like this:
  
-```js
+```javascript
 //core module for web server
 var http = require('http');
 //core module for file system

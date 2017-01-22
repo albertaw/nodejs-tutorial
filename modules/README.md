@@ -5,7 +5,7 @@ var http = require(‘http’);
 ```
  You can also create your own modules.  This is necessary to separate the logic of your app and make your code more maintainable.  Each file is it’s own module.  To make the properties and methods available to be used in other files, you have export it.  You will do this using `module.exports` or `exports.name` where name is how you have defined your property or method. To use a module that you have written, import it into your file like this:
 
-```js
+```javascript
 var module = require('./path/to/module');
 ```
 Where `module` is the name of the file the module is in, and `./path/to/module` is the relative path of the file.  Your modules will always begin with `./`.  
