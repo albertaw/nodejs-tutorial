@@ -29,12 +29,12 @@ http.createServer(…).listen(3000);
  
 The `createServer` method creates an object that contains information about our web server. The listen method watches for connections to our server.  Now that we are listening for connections, we can start accepting requests. The `...` that I left out is where our request listener goes. This will contain all of the logic for what to do with the requests. Let’s take a look at Alice and Bob to see a web server in action:
  
-Alice:  Hey Bob, can you GET me the web page at /home?
-Bob:  OK, I see for /home I’m supposed to give you this HTML file.  Here you go.
-Alice: Bob, I want to see the post at /posts/123. Can you GET it for me?
-Bob: Let me check. Sorry, Alice. I didn’t find it.
-Alice: That’s no problem. I would like to /login.  I will POST to you my email and password.
-Bob: Thanks.  I will take this information to /login. Success. Your information has been found. I will redirect you to your dashboard now.
+__Alice:__  Hey Bob, can you GET me the web page at /home?  
+__Bob:__  OK, I see for /home I’m supposed to give you this HTML file.  Here you go.  
+__Alice:__ Bob, I want to see the post at /posts/123. Can you GET it for me?  
+__Bob:__ Let me check. Sorry, Alice. I didn’t find it.  
+__Alice:__ That’s no problem. I would like to /login.  I will POST to you my email and password.  
+__Bob:__ Thanks.  I will take this information to /login. Success.   Your information has been found. I will redirect you to your dashboard now.  
  
 When Alice asks Bob to give her the /home page she was sending a request to Bob.  And when Bob sent her an HTML file, he sent a response to Alice.  In this scenario, Alice is our client, a web browser, and Bob is our web server.
  
