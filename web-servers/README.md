@@ -116,12 +116,12 @@ var http = require('http');
 var port = process.env.PORT || 3000;
 
 var onRequest = function(request, response) {
-            //set the header and status code
-            response.writeHead(200, {'Content-Type': 'text/plain'});
-            //text to send to response body
-            response.write('hello world');
-            //sends and ends the response
-            response.end();
+  //set the header and status code
+  response.writeHead(200, {'Content-Type': 'text/plain'});
+  //text to send to response body
+  response.write('hello world');
+  //sends and ends the response
+  response.end();
 };
  
 //create a new web server object, pass it a request handler and begin listening to connections on port 3000
@@ -131,10 +131,10 @@ http.createServer(onRequest).listen(port);
 When Bob receives the request, he looks for the request handling code to see how he is supposed to compose his message for Alice.  In our hello world example, when Alice sends Bob the request for `/` he lets her know it is `OK` by stating the status in the header and he sends text back that says “hello world”.  This is what the server’s response message will look like:
 
 ```
-1. Status line:     HTTP/1.1 200 OK
-2. Headers:     Content-Type: text/plain
+1. Status line:   HTTP/1.1 200 OK
+2. Headers:       Content-Type: text/plain
 3. Empty line:
-4. Body:        hello world
+4. Body:          hello world
 ```
  
 #### 1. Status line <http version> <status code> <status message>
@@ -197,18 +197,18 @@ var port = process.env.PORT || 3000;
  
 //request listener
 var onRequest = function(request, response) {
-            //make our file into a readable stream of data
-            var rs = fs.createReadStream('index.html');
-            //when a chunk of data is available
+  //make our file into a readable stream of data
+  var rs = fs.createReadStream('index.html');
+  //when a chunk of data is available
   rs.on('data', function(chunk) {
-            //send data to the response body
-                        response.write(chunk);
-            });
+  //send data to the response body
+    response.write(chunk);
+  });
  
   //when there is no more data to be received
   rs.on('end', function(){
-            //send and end the response
-            response.end();
+    //send and end the response
+    response.end();
   });
 };
  
@@ -228,10 +228,10 @@ var port = process.env.PORT || 3000;
  
 //request listener
 var onRequest = function(request, response) {
-            //make our file into a readable stream of data
-            var rs = fs.createReadStream('index.html');
-            //send file contents to the response object
-            rs.pipe(response);
+  //make our file into a readable stream of data
+  var rs = fs.createReadStream('index.html');
+  //send file contents to the response object
+  rs.pipe(response);
 };
  
 //create the web server and begin listening
