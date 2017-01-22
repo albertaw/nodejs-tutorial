@@ -244,10 +244,10 @@ http.createServer(onRequest).listen(port);
  
 ### Task
  
-Create a web server that routes requests to a home page, about page, and a contact page.  If any other page is requested, the server should return an error page.
+Create a web server that routes requests to a home page, login page, and a signup page.  If any other page is requested, the server should send a 404 error with an error message.
  
  
 ### Resources
-[Node documentation](https://nodejs.org/api/http.html)
-[Tutorials Point tutorial on http](https://www.tutorialspoint.com/http)
-[Mozilla http overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+[Node documentation](https://nodejs.org/api/http.html)  
+[Tutorials Point tutorial on http](https://www.tutorialspoint.com/http)  
+[Mozilla http overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)  
