@@ -12,16 +12,22 @@ Next, I’ll explain each part.
  
 ### Serving web pages
  
-Because we want to serve web pages, we will need an HTTP server.  So we use the `http` module that is built in node.  HTTP stands for Hyper Text Transfer Protocol.  HTTP is a means for clients and servers to communicate with each other over the Internet.  I would call it a language. (Though I’m not sure that’s technically correct.)  The client is the thing requesting information, and the server is the thing sending it.  And the middle man that operates between the two is the HTTP (web) server.   It is the responsibility of a the web server to manage the requests made by the client.  If your application did something other than serve web pages it would require a different kind of server.  For example if you were making an application to send and receive email, you would need an email (SMTP) server.     
- 
- 
-In order for the client to send requests to the server it must first connect to the server.  The server must listen for these connections and accept the connection to receive the request. In the hello world web server from the Getting Started section we did this with the following code:
+Because we want to serve web pages, we will need an HTTP server.  So we use the `http` module that is built in node.  HTTP stands for Hypertext Transfer Protocol.  HTTP is a means for clients and servers to send messages to each other over the Internet.  I would call it a language. (Though I’m not sure that’s technically correct.)  The client is the thing requesting information, and the server is the thing sending it.  And the middle man that operates between the two is the HTTP (web) server (confirm this analogy).   It is the responsibility of a the web server to manage the requests made by the client.  If your application did something other than serve web pages it would require a different kind of server.  For example if you were making an application to send and receive email, you would need an email (SMTP) server.     
+  
+In order for the client to send requests to the server it must first connect to the server.  This process starts when you enter a URL into a web browser.  When you want to connect to your node app locally, your URL might look like this: `http://localhost:3000/home`.  A URL has the following structure:  
+
+1. http protocol → http
+2. hostname → localhost
+3. port → 3000
+4. path → /home
+
+In order for the client to establish a connection with the server, the server must listen for and accept the connections. In the hello world web server from the Getting Started section we did this with the following code:
  
 ```js
 http.createServer(…).listen(3000);
 ```
  
-The `createServer` method creates an object that contains information about our web server. The listen method watches for connections to our server.  So now that we are listening for connections, we can start accepting requests. The `...` that I left out is where our request listener goes. This will contain all of the logic for what to do with requests. Let’s take a look at Alice and Bob to see a web server in action:
+The `createServer` method creates an object that contains information about our web server. The listen method watches for connections to our server.  Now that we are listening for connections, we can start accepting requests. The `...` that I left out is where our request listener goes. This will contain all of the logic for what to do with the requests. Let’s take a look at Alice and Bob to see a web server in action:
  
 Alice:  Hey Bob, can you GET me the web page at /home?
 Bob:  OK, I see for /home I’m supposed to give you this HTML file.  Here you go.
@@ -30,19 +36,74 @@ Bob: Let me check. Sorry, Alice. I didn’t find it.
 Alice: That’s no problem. I would like to /login.  I will POST to you my email and password.
 Bob: Thanks.  I will take this information to /login. Success. Your information has been found. I will redirect you to your dashboard now.
  
-When Alice asks Bob to give her the /home page she was sending a request to Bob.  And when Bob sent her an HTML file, he sent a response to Alice.  In this scenario, Alice would be a web browser and Bob would your web server.
-
+When Alice asks Bob to give her the /home page she was sending a request to Bob.  And when Bob sent her an HTML file, he sent a response to Alice.  In this scenario, Alice is our client, a web browser, and Bob is our web server.
  
 ### Routing requests
  
-This interaction brings us to #2 routing requests.  Alice is limited in the kinds of requests she can make.  She can make a GET request, a POST request, a PUT request, or a DELETE request to name a few.  
+When you enter `http://localhost:3000/home` in your browser, Alice will connect to Bob then give him the message which will look like this:
+```
+GET /home HTTP/1.1
+Accept: text/html   
+Accept-Language: en-US
+Host: localhost:3000
+```
+
+In general a message will have the following format:  
+```
+1. Start line
+2. One or more headers
+3. An empty line
+4. The body
+```
+
+#### 1. Start line: <request method> <path> <HTTP version number>
+For a request message the start line will be the request.  The request method tells Bob how to act on the request.  Here is the kinds of requests Alice can make to Bob:  
  
-GET – Retrieves data  
-POST – Sends data  
-PUT – Sends data (to update information)  
-DELETE – remove data   
+GET – retrieve data  
+POST – send data  
+PUT – update data
+DELETE – remove data  
+HEAD - get the status line and headers
+CONNECT - establish a network connection
+OPTIONS - get the http methods supported by the web server
+TRACE - get the contents of the request message
  
-Then Alice has to specify where her request is being sent.  /home, /posts/123, and /login are the destination for her request to take. This takes the form of a URL.
+Then Alice has to specify what her request is for, the path.  Last, the HTTP version is given to specify the rules for Alice and Bob to communicate with each other.   
+
+#### 2. Headers: <fieldname> : <value>  
+The headers are used to send instructions with the request.  For example, when Alice asks Bob for a web page, she puts a note in the headers that she wants to accept text/html.  This is the list of headers she can use:
+
+Accept-Charset
+Accept-Encoding
+Accept-Language
+Authorization
+Expect
+From
+Host
+If-Match
+If-Modified-Since
+If-None-Match
+If-Range
+If-Unmodified-Since
+Max-Forwards
+Proxy-Authorization
+Range
+Referer
+TE
+User-Agent
+#### 3 Empty line
+This indicates the end of the headers.
+
+#### 4 Body
+This contains the actual request data and is optional.  It may be data from a form or data that is uploaded to the server. When Alice asks to login, she sends her email and password in the body of the request.  Her message she sends to Bob will look something like this:
+
+```
+POST /login HTTP/1.1
+Host: localhost:3000 
+Content-Type: application/x-www-form-urlencoded
+
+email=alice@example.com&password=s4389ohwegh#iklag!
+```
  
  Bob’s job is to take this information and route it to the code in your app that is responsible for handling this request.  We will call that code the request handler. The request handler will execute some commands then will tell Bob what to give Alice.  Bob then responds to Alice with the data.  The gist of routing is mapping requests to request handlers.
  
@@ -50,33 +111,68 @@ In our hello world web server example from the Getting Started section, our requ
  
 ```js
 var http = require('http');
- 
+var port = process.env.PORT || 3000;
+
 var onRequest = function(request, response) {
-        	//set the header and status code
-        	response.writeHead(200, {'Content-Type': 'text/plain'});
-        	//text to send to response body
-        	response.write('hello world');
-        	//sends and ends the response
-        	response.end();
+            //set the header and status code
+            response.writeHead(200, {'Content-Type': 'text/plain'});
+            //text to send to response body
+            response.write('hello world');
+            //sends and ends the response
+            response.end();
 };
  
-//create a new web server object, pass it a request listener and begin listening to connections on port 3000
-http.createServer(onRequest).listen(3000);
+//create a new web server object, pass it a request handler and begin listening to connections on port 3000
+http.createServer(onRequest).listen(port);
 ```
  
-As you can see in our request handler, we are doing more than just sending the text “hello world.”  And Bob is sending more than just a web page to Alice.  The web page just comprises the body of the response.  Bob responds with the status of Alice’s request by telling her `OK`.  There is a code associated with the status message as well.  `OK` would have a status code of 200.  Bob can give Alice the extra information about the response via the header of the response.  For example he can tell her what type of content is being sent. If he is sending a web page the Content-Type will be ‘text/html’. This is what a response
+When Bob receives the request, he looks for the request handling code to see how he is supposed to compose his message for Alice.  In our hello world example, when Alice sends Bob the request for `/` he lets her know it is `OK` by stating the status in the header and he sends text back that says “hello world”.  This is what the server’s response message will look like:
 
-This is a summary of some of the node properties and methods you can use on the request and response object:
+```
+1. Status line:     HTTP/1.1 200 OK
+2. Headers:     Content-Type: text/plain
+3. Empty line:
+4. Body:        hello world
+```
  
-request.headers – object containing header names and values  
-request.method – the request method as a string (ex. ‘GET’)  
-request.statusCode – the HTTP response code (ex. 200)  
-request.statusMessage – the HTTP response status message (ex. ‘OK’)  
-request.url – the URL string (ex. ‘/home’)  
-response.writeHead() - sends a response header to the request  
-response.write() - sends a response body  
-response.end() - sends and ends a response  
+#### 1. Status line <http version> <status code> <status message>
+Status codes will be a three digit number with the following format:
+
+1xx: Informational
+2xx: Success
+3xx: Redirection
+4xx: Client Error
+5xx: Server Error
+
+#### 2. Response headers <field name>: <field value>
+The headers provide additional information about the response. These are a list of field names:
+
+Accept-Ranges
+Age
+ETag
+Location
+Proxy-Authenticate
+Retry-After
+Server
+Vary
+WWW-Authenticate
+
+
+#### 4. Response body
+This can be text, html or another content type.
+
+In node, your request handlers will have a request and response object passed to it: `function(request, response)`. This is a summary of some of the properties and methods you can use on the request and response object:
  
+request.headers – object containing header names and values
+request.method – the request method as a string (ex. ‘GET’)
+request.statusCode – the HTTP response code (ex. 200)
+request.statusMessage – the HTTP response status message (ex. ‘OK’)
+request.url – the URL string (ex. ‘/home’)
+response.writeHead() - sends a response header to the request
+response.write() - sends a response body
+response.end() - sends and ends a response
+ 
+
 ### Displaying content
  
 One of the requests Bob needed to fulfill was sending an HTML page to Alice.  In Getting Started, I left you with an exercise to send HTML to the client instead of text. Your code may have looked something like this:
@@ -95,27 +191,28 @@ But what if you had hundreds of lines of HTML you needed to send back to the cli
 var http = require('http');
 //core module for file system
 var fs = require('fs'); 
+var port = process.env.PORT || 3000;
  
 //request listener
 var onRequest = function(request, response) {
-        	//make our file into a readable stream of data
-        	var rs = fs.createReadStream('index.html');
-        	//when a chunk of data is available
+            //make our file into a readable stream of data
+            var rs = fs.createReadStream('index.html');
+            //when a chunk of data is available
   rs.on('data', function(chunk) {
-        	//send data to the response body
-                    	response.write(chunk);
-        	});
+            //send data to the response body
+                        response.write(chunk);
+            });
  
   //when there is no more data to be received
   rs.on('end', function(){
-        	//send and end the response
-        	response.end();
+            //send and end the response
+            response.end();
   });
 };
  
 //create the web server and begin listening
 //to connections on port 3000
-http.createServer(onRequest).listen(3000); 
+http.createServer(onRequest).listen(port); 
 ```
  
 Alternatively you could achieve the same thing like this:
@@ -125,26 +222,27 @@ Alternatively you could achieve the same thing like this:
 var http = require('http');
 //core module for file system
 var fs = require('fs'); 
+var port = process.env.PORT || 3000;
  
 //request listener
 var onRequest = function(request, response) {
-        	//make our file into a readable stream of data
-        	var rs = fs.createReadStream('index.html');
-        	//send file contents to the response object
-        	rs.pipe(response);
+            //make our file into a readable stream of data
+            var rs = fs.createReadStream('index.html');
+            //send file contents to the response object
+            rs.pipe(response);
 };
  
 //create the web server and begin listening
 //to connections on port 3000
-http.createServer(onRequest).listen(3000); 
+http.createServer(onRequest).listen(port); 
 ```
  
 ### Task
  
-Create a web server that routes requests to a home page, login page, and a signup page.  If any other page is requested, the server should return an error page.
+Create a web server that routes requests to a home page, about page, and a contact page.  If any other page is requested, the server should return an error page.
  
  
 ### Resources
-[Tutorials Point](https://www.tutorialspoint.com/http)
-
-
+[Node documentation](https://nodejs.org/api/http.html)
+[Tutorials Point tutorial on http](https://www.tutorialspoint.com/http)
+[Mozilla http overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
