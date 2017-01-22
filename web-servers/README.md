@@ -56,7 +56,9 @@ In general a message will have the following format:
 4. The body
 ```
 
-#### 1. Start line: <request method> <path> <HTTP version number>
+#### 1. Start line
+
+Format: <request method> <path> <HTTP version number>
 
 For a request message the start line will be the request.  The request method tells Bob how to act on the request.  Here is the kinds of requests Alice can make to Bob:  
  
@@ -71,7 +73,8 @@ For a request message the start line will be the request.  The request method te
  
 Then Alice has to specify what her request is for, the path.  Last, the HTTP version is given to specify the rules for Alice and Bob to communicate with each other.   
 
-#### 2. Headers: <fieldname>: <value>  
+#### 2. Headers
+Format: <fieldname>: <value>  
 The headers are used to send instructions with the request.  For example, when Alice asks Bob for a web page, she puts a note in the headers that she wants to accept text/html.  This is the list of headers she can use:
 
 - Accept-Charset
