@@ -14,11 +14,11 @@ functions, callbacks), git, and using a terminal.
 - [Part one: Getting Started](https://github.com/albertaw/Nodejs-tutorial/tree/master/getting-started) - Deploy a hello world app to heroku
 - [Part two: Web Servers](https://github.com/albertaw/Nodejs-tutorial/tree/master/web-servers) - How the internet works
 - [Part three: Modules](https://github.com/albertaw/Nodejs-tutorial/tree/master/modules) - Patterns and object oriented design, unit testing
-- [Part four: Routing](https://github.com/albertaw/Nodejs-tutorial/tree/master/routing) - Express and MVC software architecture
+- [Part four: Routing](https://github.com/albertaw/Nodejs-tutorial/tree/master/routing) - Express, Hapi, and RESTful API design
 - [Part five: Testing](https://github.com/albertaw/Nodejs-tutorial/tree/master/testing) - Mocha, SuperAgent, and Postman
-- [Part six: Databases](https://github.com/albertaw/Nodejs-tutorial/tree/master/databases) - MongoDB and PostgreSQL
+- [Part six: Databases](https://github.com/albertaw/Nodejs-tutorial/tree/master/databases) - MongoDB, Cassandra, PostgreSQL, OracleDB, and Redis
 - [Part seven: Auth](https://github.com/albertaw/Nodejs-tutorial/tree/master/auth) - Authentication and authorization
-- [Part eight: Templating](https://github.com/albertaw/Nodejs-tutorial/tree/master/templating) - View engines and front end frameworks
+- [Part eight: Templating](https://github.com/albertaw/Nodejs-tutorial/tree/master/templating) - View engines, front end frameworks, and MVC architecture
 - [Part nine: Deployment](https://github.com/albertaw/Nodejs-tutorial/tree/master/deployment) - Build tools, continuous integration, and hosting
 - [Part ten: Putting it all together](https://github.com/albertaw/Nodejs-tutorial/tree/master/capstone) - Development workflow, software development life cycle
 
