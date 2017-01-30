@@ -128,7 +128,10 @@ var onRequest = function(request, response) {
 };
  
 //create a new web server object, pass it a request handler and begin listening to connections on port 3000
-http.createServer(onRequest).listen(port);
+http.createServer(onRequest).listen(port, function () {
+  //output message to the console
+  console.log('Server running on port’, port);
+});
 ```
  
 When Bob receives the request, he looks for the request handling code to see how he is supposed to compose his message for Alice.  In our hello world example, when Alice sends Bob the request for `/` he lets her know it is `OK` by stating the status in the header and he sends text back that says “hello world”.  This is what the server’s response message will look like:
@@ -217,7 +220,10 @@ var onRequest = function(request, response) {
  
 //create the web server and begin listening
 //to connections on port 3000
-http.createServer(onRequest).listen(port); 
+http.createServer(onRequest).listen(port, function () {
+  //output message to the console
+  console.log('Server running on port’, port);
+}); 
 ```
  
 Alternatively you could achieve the same thing like this:
@@ -239,7 +245,10 @@ var onRequest = function(request, response) {
  
 //create the web server and begin listening
 //to connections on port 3000
-http.createServer(onRequest).listen(port); 
+http.createServer(onRequest).listen(port, function () {
+  //output message to the console
+  console.log('Server running on port’, port);
+}); 
 ```
  
 ### Task
@@ -251,3 +260,6 @@ Create a web server that routes requests to a home page, login page, and a signu
 [Node documentation](https://nodejs.org/api/http.html)  
 [Tutorials Point tutorial on http](https://www.tutorialspoint.com/http)  
 [Mozilla http overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)  
+
+
+
