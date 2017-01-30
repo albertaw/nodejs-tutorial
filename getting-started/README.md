@@ -38,7 +38,7 @@ http.createServer(function (request, response) {
 	//begin accepting connections on port 3000
 }).listen(port, function () {
 	//output message to the console
-	console.log('Server running on port 3000');
+	console.log('Server running on port’, port);
 });
 
 ```
@@ -95,7 +95,7 @@ You have seen how to create a simple node app and put it online.  Next we will g
 
 ### Exercise
 
-Modify your app to send an html document.  You will need to change the content type and the value passed to `response.write`. Commit your changes to github and deploy to Heroku.
+Modify your app to send html to the response.  It should contain at least an h1 element with the title of your app and an h2 element with the description. You will need to change the content type and the value passed to `response.write`. Commit your changes to github and deploy to Heroku.
 
 
 
