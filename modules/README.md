@@ -10,6 +10,9 @@ var module = require('./path/to/module');
 ```
 Where `module` is the name of the file the module is in, and `./path/to/module` is the relative path of the file.  Your modules will always begin with `./`.  
 
+
+
+
 Here are some different patterns to create a module.
 
 1. exporting a function, useful for creating route handlers 
@@ -32,6 +35,7 @@ to require one file
 exports.moduleA = require(‘./moduleA);
 exports.moduleB = require(‘./moduleB);
 
+<explain testing in mocha>
 
 ### Exercise
 In the web servers exercise, you were given the task to create a few routes for you app.  Refactor your code by putting your routes into their own module.  
