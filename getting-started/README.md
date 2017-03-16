@@ -38,7 +38,7 @@ http.createServer(function (request, response) {
 	//begin accepting connections on port 3000
 }).listen(port, function () {
 	//output message to the console
-	console.log('Server running on port’, port);
+	console.log('Server running on port', port);
 });
 
 ```

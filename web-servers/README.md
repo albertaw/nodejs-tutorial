@@ -130,7 +130,7 @@ var onRequest = function(request, response) {
 //create a new web server object, pass it a request handler and begin listening to connections on port 3000
 http.createServer(onRequest).listen(port, function () {
   //output message to the console
-  console.log('Server running on port’, port);
+  console.log('Server running on port', port);
 });
 ```
  
@@ -222,7 +222,7 @@ var onRequest = function(request, response) {
 //to connections on port 3000
 http.createServer(onRequest).listen(port, function () {
   //output message to the console
-  console.log('Server running on port’, port);
+  console.log('Server running on port', port);
 }); 
 ```
  
@@ -247,7 +247,7 @@ var onRequest = function(request, response) {
 //to connections on port 3000
 http.createServer(onRequest).listen(port, function () {
   //output message to the console
-  console.log('Server running on port’, port);
+  console.log('Server running on port', port);
 }); 
 ```
  
