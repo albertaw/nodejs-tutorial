@@ -32,9 +32,7 @@ Where `module` is the filename of the module, and `./path/to/module` is the rela
 var user = require('./routes/user');
 ```
 
-### Object oriented programming 
-
-A module can also be thought of as a class or an object that belongs to your entire software system. A class is the blueprint from which objects are created.  An object is a bundle of code with properties and behavior that models a real world object. 
+A module can also be thought of as a class or an object that belongs to your entire software system. A class is the blueprint from which objects are created. An object is a bundle of code with properties and behavior that models a real world object. 
 
 You can create such an object in javascript like this:
 
