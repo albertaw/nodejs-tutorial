@@ -1,4 +1,4 @@
-Build a Web app with Node
+Build a Web App with Node
 =========================
 
 What is Node.js? Node.js (node) is a tool that lets you run JavaScript outside of a browser. It is also a library which allows you to download and manage external code (modules) in your projects. Node comes with it's own core modules, but to extend its functionality you will use modules contributed by the community via the node package manager (npm). 
