@@ -1,6 +1,5 @@
-# Node.js Tutorial
-
-## Introduction
+Build a Web app with Node
+=========================
 
 What is Node.js? Node.js (node) is a tool that lets you run JavaScript outside of a browser. It is also a library which allows you to download and manage external code (modules) in your projects. Node comes with it's own core modules, but to extend its functionality you will use modules contributed by the community via the node package manager (npm). 
 
@@ -9,7 +8,8 @@ Why node? If you are already know JavaScript, you can build a full stack app qui
 This tutorial is designed to teach you node by building an example app. Each lesson builds upon the previous lesson and will allow you to apply what you have learned with hands on exercises.  This tutorial assumes you have knowlege of JavaScript (programming fundamentals, higher order
 functions, callbacks), git, and using a terminal.
 
-## Contents
+Table of Contents
+-----------------
 
 - [Part one: Getting Started](https://github.com/albertaw/Nodejs-tutorial/tree/master/getting-started) - Deploy a hello world app to heroku
 - [Part two: Web Servers](https://github.com/albertaw/Nodejs-tutorial/tree/master/web-servers) - How the internet works
@@ -21,11 +21,4 @@ functions, callbacks), git, and using a terminal.
 - [Part eight: Templating](https://github.com/albertaw/Nodejs-tutorial/tree/master/templating) - View engines, front end frameworks, and MVC architecture
 - [Part nine: Deployment](https://github.com/albertaw/Nodejs-tutorial/tree/master/deployment) - Build tools, continuous integration, and hosting
 - [Part ten: Putting it all together](https://github.com/albertaw/Nodejs-tutorial/tree/master/capstone) - Development workflow, software development life cycle
-
-## Contributing
-
-If you see areas where the lessons are unclear or can be
-improved, or if you catch any spelling or grammatical errors,
-submit a pull request with the proposed changes. You may also 
-add comments where you want to communicate a change. 
 

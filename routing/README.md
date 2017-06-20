@@ -60,7 +60,7 @@ app.use(middleware);
 Where `middleware` is replaced with the name you give to your middleware function. You can also link your middleware to a particular route.  You may want to do this if you want to make sure users are authenticated before they can access certain routes.  Like seeing a user dashboard. Or for logging and session handling.
 
 ```javascript
-app.use(‘/route’, middleware);
+app.use('/route', middleware);
 ``` 
 
 ### Architecting a Rest API
@@ -99,13 +99,13 @@ GET /books/:id/reviews
 The `:id` part of the path is a parameter.  Parameters allow us to create multiple routes based on a particular pattern.  This is the general form for creating route handlers in express:
 
 ```js
-app.method(‘/path’, requestHandler)
+app.method('/path', requestHandler)
 ```
 
 This code matches the request to what needs to handle the request. The request handler receives the request object and a response object. This is an example of a route handler for `GET /books`:
 
 ```js
-app.get(‘/books’,  function(req, res) {
+app.get('/books',  function(req, res) {
   //get the books from the datastore
   res.json(books);
 });
